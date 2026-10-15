@@ -10,6 +10,14 @@
     "repositoryUrl": "https://github.com/Maronato/jellyfin-plugin-polyglot",
     "versions": [
       {
+        "version": "0.10.0.0",
+        "changelog": "**Full Changelog**: https://github.com/TheJanusz/jellyfin-plugin-polyglot/commits/v0.10.0",
+        "targetAbi": "12.0.0.0",
+        "sourceUrl": "https://github.com/TheJanusz/jellyfin-plugin-polyglot/releases/download/v0.10.0/polyglot_0.10.0.0.zip",
+        "checksum": "0d046bb88289eb0a0c3630ec7ebfd0d2",
+        "timestamp": "2026-10-15T21:42:55Z"
+      },
+      {
         "version": "0.9.6.0",
         "changelog": "## What's Changed\n\n### 🔧 Improvements\n- Normalize path handling in PolyglotController\n  - Introduced normalization for destination and target paths to ensure OS-native format\n  - Added validation to reject relative and empty paths with appropriate error messages\n\n**Full Changelog**: https://github.com/Maronato/jellyfin-plugin-polyglot/compare/v0.9.5...v0.9.6",
         "targetAbi": "10.10.0.0",
