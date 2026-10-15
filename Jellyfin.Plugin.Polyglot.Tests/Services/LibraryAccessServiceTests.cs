@@ -1,5 +1,6 @@
 using FluentAssertions;
-using Jellyfin.Data.Enums;
+using Jellyfin.Data;
+using Jellyfin.Database.Implementations.Enums;
 using Jellyfin.Plugin.Polyglot.Services;
 using Jellyfin.Plugin.Polyglot.Tests.TestHelpers;
 using MediaBrowser.Controller.Library;

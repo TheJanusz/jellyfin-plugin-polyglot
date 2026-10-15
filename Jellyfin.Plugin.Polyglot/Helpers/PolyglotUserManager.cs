@@ -19,7 +19,6 @@ public sealed class PolyglotUserManager
 
     // Cached reflection info
     private static MethodInfo? _getUserByIdMethod;
-    private static PropertyInfo? _usersProperty;
     private static MethodInfo? _updateUserAsyncMethod;
 
     /// <summary>
@@ -67,26 +66,7 @@ public sealed class PolyglotUserManager
     /// <returns>An enumerable of PolyglotUser instances.</returns>
     public IEnumerable<PolyglotUser> GetUsers()
     {
-        var property = GetCachedProperty(ref _usersProperty, "Users");
-        if (property == null)
-        {
-            return Enumerable.Empty<PolyglotUser>();
-        }
-
-        try
-        {
-            var result = property.GetValue(_userManager);
-            if (result is System.Collections.IEnumerable enumerable)
-            {
-                return enumerable.Cast<object>().Select(u => new PolyglotUser(u));
-            }
-        }
-        catch
-        {
-            // Fall through
-        }
-
-        return Enumerable.Empty<PolyglotUser>();
+        return _userManager.GetUsers().Select(user => new PolyglotUser(user));
     }
 
     /// <summary>
@@ -132,17 +112,6 @@ public sealed class PolyglotUserManager
             ? _userManagerType.GetMethod(methodName, BindingFlags.Public | BindingFlags.Instance, null, paramTypes, null)
             : _userManagerType.GetMethod(methodName, BindingFlags.Public | BindingFlags.Instance);
 
-        return cache;
-    }
-
-    private PropertyInfo? GetCachedProperty(ref PropertyInfo? cache, string propertyName)
-    {
-        if (cache != null)
-        {
-            return cache;
-        }
-
-        cache = _userManagerType.GetProperty(propertyName, BindingFlags.Public | BindingFlags.Instance);
         return cache;
     }
 }

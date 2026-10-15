@@ -51,7 +51,7 @@ public class MirrorSyncTaskTests : IDisposable
 
         // Assert
         triggers.Should().ContainSingle();
-        triggers[0].Type.Should().Be(TaskTriggerInfo.TriggerInterval);
+        triggers[0].Type.Should().Be(TaskTriggerInfoType.IntervalTrigger);
         triggers[0].IntervalTicks.Should().Be(TimeSpan.FromHours(6).Ticks);
     }
 
@@ -179,7 +179,7 @@ public class UserLanguageSyncTaskTests : IDisposable
 
         // Assert
         triggers.Should().ContainSingle();
-        triggers[0].Type.Should().Be(TaskTriggerInfo.TriggerDaily);
+        triggers[0].Type.Should().Be(TaskTriggerInfoType.DailyTrigger);
     }
 
     [Fact]

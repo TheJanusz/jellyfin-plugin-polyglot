@@ -23,7 +23,7 @@ jobs:
       - name: Setup .NET
         uses: actions/setup-dotnet@v4
         with:
-          dotnet-version: '8.0.x'
+          dotnet-version: '10.0.x'
 
       - name: Get version
         id: version
@@ -47,7 +47,7 @@ jobs:
         id: jprm
         uses: oddstr13/jellyfin-plugin-repository-manager@v1.1.1
         with:
-          dotnet-target: net8.0
+          dotnet-target: net10.0
           path: ${{ env.PLUGIN_PATH }}
 
       - name: Upload Artifact
@@ -64,7 +64,7 @@ jobs:
       - name: Setup .NET
         uses: actions/setup-dotnet@v4
         with:
-          dotnet-version: '8.0.x'
+          dotnet-version: '10.0.x'
 
       - name: Run Tests
         run: dotnet test ${{ env.PLUGIN_PATH }}.Tests --verbosity normal

@@ -1,5 +1,5 @@
 using FluentAssertions;
-using Jellyfin.Data.Entities;
+using Jellyfin.Database.Implementations.Entities;
 using Jellyfin.Plugin.Polyglot.Models;
 using Jellyfin.Plugin.Polyglot.Services;
 using Jellyfin.Plugin.Polyglot.Tests.TestHelpers;

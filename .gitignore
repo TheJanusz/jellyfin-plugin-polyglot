@@ -31,4 +31,8 @@ Thumbs.db
 *.tmp
 *.temp
 
+# devenv
+.devenv/
+.direnv/
+
 .hidden/

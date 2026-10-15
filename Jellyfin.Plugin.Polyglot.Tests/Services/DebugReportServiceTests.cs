@@ -1,6 +1,6 @@
 using System.Collections.Generic;
 using FluentAssertions;
-using Jellyfin.Data.Entities;
+using Jellyfin.Database.Implementations.Entities;
 using Jellyfin.Plugin.Polyglot.Configuration;
 using Jellyfin.Plugin.Polyglot.Models;
 using Jellyfin.Plugin.Polyglot.Services;
@@ -38,7 +38,7 @@ public class DebugReportServiceTests : IDisposable
         _applicationHostMock.Setup(x => x.ApplicationVersionString).Returns("10.9.0");
         _applicationHostMock.Setup(x => x.GetExports<IPlugin>(It.IsAny<bool>())).Returns(Array.Empty<IPlugin>());
         _libraryManagerMock.Setup(x => x.GetVirtualFolders()).Returns(new List<MediaBrowser.Model.Entities.VirtualFolderInfo>());
-        _userManagerMock.Setup(x => x.Users).Returns(Array.Empty<User>());
+        _userManagerMock.Setup(x => x.GetUsers()).Returns(Array.Empty<User>());
 
         var configServiceMock = TestHelpers.MockFactory.CreateConfigurationService(_context.Configuration);
 

@@ -1,5 +1,5 @@
 using FluentAssertions;
-using Jellyfin.Data.Entities;
+using Jellyfin.Database.Implementations.Entities;
 using Jellyfin.Data.Events.Users;
 using Jellyfin.Plugin.Polyglot.EventConsumers;
 using Jellyfin.Plugin.Polyglot.Models;

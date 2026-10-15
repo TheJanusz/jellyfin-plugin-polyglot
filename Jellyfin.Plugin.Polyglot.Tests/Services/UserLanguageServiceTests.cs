@@ -171,7 +171,7 @@ public class UserLanguageServiceTests : IDisposable
         // Arrange
         var nonExistentUserId = Guid.NewGuid();
         var alternative = _context.AddLanguageAlternative("Portuguese", "pt-BR");
-        _userManagerMock.Setup(m => m.GetUserById(nonExistentUserId)).Returns((Jellyfin.Data.Entities.User?)null);
+        _userManagerMock.Setup(m => m.GetUserById(nonExistentUserId)).Returns((Jellyfin.Database.Implementations.Entities.User?)null);
 
         // Act
         var action = async () => await _service.AssignLanguageAsync(
